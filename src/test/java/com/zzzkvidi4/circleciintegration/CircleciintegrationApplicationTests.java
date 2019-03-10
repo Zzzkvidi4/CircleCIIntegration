@@ -12,5 +12,4 @@ public class CircleciintegrationApplicationTests {
     @Test
     public void contextLoads() {
     }
-
 }
