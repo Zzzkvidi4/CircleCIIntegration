@@ -44,7 +44,7 @@ jobs:
       - persist_to_workspace:
           root: target
           paths:
-            - circleciiintegration-0.0.1-SNAPSHOT.war
+            - circleciintegration-0.0.1-SNAPSHOT.war
   deploy:
     docker:
       - image: circleci/python:2.7-jessie
