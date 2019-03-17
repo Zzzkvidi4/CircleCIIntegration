@@ -39,7 +39,6 @@ jobs:
 
       # run tests!
       - run: mvn integration-test
-      - run: mvn package
       - run: ls target
       - persist_to_workspace:
           root: target
@@ -70,11 +69,17 @@ jobs:
           name: Configure credentials for AWS
           command: mkdir ~/.aws && printf "[default]\naws_access_key_id = ${AWS_ACCESS_KEY_ID}\naws_secret_access_key = ${AWS_SECRET_ACCESS_KEY}" > ~/.aws/credentials
       - run:
+          name: Initialize local git repository
+          command: git init
+      - run:
           name: Clone elastic beanstalk config files
           command: mkdir .elasticbeanstalk && cp target/config.yml .elasticbeanstalk && ls .elasticbeanstalk
       - run:
           name: Clone build artifact
           command: cp target/circleciintegration-0.0.1-SNAPSHOT.war ~/repo && ls ~/repo
+      - run:
+          name: Commit files
+          command: git add . && git commit -m "Initial commit"
       - run:
           name: Deploy app to dev-env
           command: eb deploy Circleciintegration-env
