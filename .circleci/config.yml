@@ -39,12 +39,22 @@ jobs:
 
       # run tests!
       - run: mvn integration-test
+      - run: mvn package
+      - persist_to_workspace:
+          root: target
+          paths:
+            - circleciiintegration-0.0.1-SNAPSHOT.war
   deploy:
     docker:
       - image: circleci/python:2.7-jessie
     working_directory: ~/repo
 
     steps:
+      - attach_workspace:
+          at: target
+      - run:
+          name: Show files
+          command: ls -l target
       - run:
           name: Install Amazon Web Services Elastic Beanstalk CLI
           command: sudo pip install awsebcli
