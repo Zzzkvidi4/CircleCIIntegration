@@ -1,0 +1,20 @@
+branch-defaults:
+  feature/checkstyle-config:
+    environment: null
+    group_suffix: null
+deploy:
+  artifact: circleciintegration-0.0.1-SNAPSHOT.war
+global:
+  application_name: CircleCIIntegration
+  branch: null
+  default_ec2_keyname: null
+  default_platform: Tomcat 8.5 Java 8
+  default_region: us-east-2
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: null
+  repository: null
+  sc: git
+  workspace_type: Application
