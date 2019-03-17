@@ -92,7 +92,7 @@ jobs:
           command: git add . && git commit -m "Initial commit"
       - run:
           name: Deploy app to dev-env
-          command: ./deploy.sh
+          command: chmod 777 deploy.sh && ./deploy.sh
 
 workflows:
   version: 2
