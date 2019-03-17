@@ -40,6 +40,7 @@ jobs:
       # run tests!
       - run: mvn integration-test
       - run: mvn package
+      - run: ls target
       - persist_to_workspace:
           root: target
           paths:
