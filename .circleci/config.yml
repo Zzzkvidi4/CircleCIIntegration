@@ -72,6 +72,9 @@ jobs:
           name: Initialize local git repository
           command: git init
       - run:
+          name: Configure git user
+          command: git config --global user.email "zzzkvidi4@gmail.com" && git config --global user.name "Zzzkvidi4"
+      - run:
           name: Clone elastic beanstalk config files
           command: mkdir .elasticbeanstalk && cp target/config.yml .elasticbeanstalk && ls .elasticbeanstalk
       - run:
