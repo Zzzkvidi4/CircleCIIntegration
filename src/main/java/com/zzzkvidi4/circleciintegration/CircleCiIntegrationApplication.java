@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CircleciintegrationApplication {
+public class CircleCiIntegrationApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CircleciintegrationApplication.class, args);
+        SpringApplication.run(CircleCiIntegrationApplication.class, args);
     }
 
 }
