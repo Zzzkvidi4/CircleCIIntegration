@@ -24,10 +24,12 @@ public class MockController {
      * Метод, выполняющий долгие операции.
      *
      * @return строка приветствия.
+     * @throws InterruptedException ошибка.
      */
     @GetMapping(path = "/slowly")
     public final String getHelloMsgSlowly() throws InterruptedException {
-        Thread.sleep(120000);
+        final int delay = 120000;
+        Thread.sleep(delay);
         return "Hello, world!";
     }
 
