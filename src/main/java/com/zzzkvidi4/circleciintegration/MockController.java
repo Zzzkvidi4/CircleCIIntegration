@@ -19,4 +19,27 @@ public class MockController {
     public final String getHelloMsg() {
         return "Hello, world!";
     }
+
+    /**
+     * Метод, выполняющий долгие операции.
+     *
+     * @return строка приветствия.
+     * @throws InterruptedException ошибка.
+     */
+    @GetMapping(path = "/slowly")
+    public final String getHelloMsgSlowly() throws InterruptedException {
+        final int delay = 120000;
+        Thread.sleep(delay);
+        return "Hello, world!";
+    }
+
+    /**
+     * Метод, гарантированно бросающий исключение.
+     *
+     * @return строка приветствия.
+     */
+    @GetMapping(path = "/fail")
+    public final String getSomethingUnsuccessfully() {
+        throw new NullPointerException("Oops");
+    }
 }
