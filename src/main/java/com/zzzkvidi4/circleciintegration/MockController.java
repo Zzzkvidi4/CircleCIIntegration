@@ -25,9 +25,9 @@ public class MockController {
      *
      * @return строка приветствия.
      */
-    @GetMapping
+    @GetMapping(path = "/slowly")
     public final String getHelloMsgSlowly() throws InterruptedException {
-        Thread.sleep(300000);
+        Thread.sleep(120000);
         return "Hello, world!";
     }
 
@@ -36,7 +36,7 @@ public class MockController {
      *
      * @return строка приветствия.
      */
-    @GetMapping
+    @GetMapping(path = "/fail")
     public final String getSomethingUnsuccessfully() {
         throw new NullPointerException("Oops");
     }
