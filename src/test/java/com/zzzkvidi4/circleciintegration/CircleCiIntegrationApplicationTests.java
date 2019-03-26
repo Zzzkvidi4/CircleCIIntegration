@@ -12,5 +12,10 @@ public class CircleCiIntegrationApplicationTests {
     @Test
     public void contextLoads() {
     }
+    
+    @Test
+    public void failingTest() {
+        throw new NullPointerException("Some msg");
+    }
 
 }
